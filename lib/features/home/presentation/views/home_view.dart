@@ -1,0 +1,70 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:purity/app/service_locator.dart';
+import 'package:purity/config/routes/app_navigator.dart';
+import 'package:purity/core/utils/strings_manager.dart';
+import 'package:purity/core/widgets/app_dialogs.dart';
+import 'package:purity/features/home/presentation/view_model/home_view_model.dart';
+import 'package:purity/features/home/presentation/view_model/home_view_states.dart';
+
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  late HomeViewModel _viewModel;
+
+  @override
+  void initState() {
+    super.initState();
+    _viewModel = serviceLocator<HomeViewModel>()..init();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => _viewModel,
+      child: BlocConsumer<HomeViewModel, HomeViewStates>(
+        listener: (context, state) {
+          if (state is HomeBarcodeLoadedState) {
+            AppDialogs.showFoundBarcodeDialog(
+              context: context,
+              title: state.barcode.rawValue ?? 'Barcode',
+              message: 'New Barcode',
+              confirmButtonLabel: AppStrings.okay.tr(),
+              onConfirmButtonPressed: AppNavigator.pop,
+            );
+          }
+        },
+        builder: (_, state) {
+          return Scaffold(
+            body: SafeArea(
+              child: Visibility(
+                visible: _viewModel.isCameraPermissionGranted ?? false,
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: 5,
+                      child: MobileScanner(
+                        controller: _viewModel.controller,
+                        useAppLifecycleState: true,
+                        tapToFocus: true,
+                        onDetect: (capture) => _viewModel.onDetect(capture),
+                      ),
+                    ),
+                    Expanded(flex: 4, child: Container()),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}

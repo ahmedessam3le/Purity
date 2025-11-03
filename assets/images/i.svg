@@ -1,0 +1,8 @@
+<svg height="16.001" viewBox="0 0 16 16.001" width="16" xmlns="http://www.w3.org/2000/svg">
+    <g data-name="Group 4" id="Group_4" transform="translate(0)">
+        <rect data-name="Rectangle 1445" fill="none" height="16" id="Rectangle_1445" transform="translate(0)" width="16" />
+        <path d="M1,12a1,1,0,0,1-1-1H0a1,1,0,0,1,1-1H2V2H1A1,1,0,0,1,1,0H3A1,1,0,0,1,4,1v9H5a1,1,0,0,1,1,1H6a1,1,0,0,1-1,1Z" data-name="Union 8" fill="#fff" id="Union_8"
+            transform="translate(5 4)" />
+        <circle cx="1.5" cy="1.5" data-name="Ellipse 111" fill="#fff" id="Ellipse_111" r="1.5" transform="translate(6)" />
+    </g>
+</svg>

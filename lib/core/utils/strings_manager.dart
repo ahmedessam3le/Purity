@@ -1,0 +1,235 @@
+/// AppStrings class is used to handle all strings over the application, instead of statically
+/// them each type
+library;
+
+class AppStrings {
+  // Core
+
+  static const String appName = 'Purity';
+  static const String noRouteFound = 'No Route Found';
+
+  static const String onBoardingOne = 'onBoarding_one';
+  static const String onBoardingTwo = 'onBoarding_two';
+  static const String onBoardingThree = 'onBoarding_three';
+  static const String allow = 'allow';
+  static const String dark = 'dark';
+  static const String light = 'light';
+  static const String settings = 'settings';
+  static const String start = 'start';
+  static const String everythingThingIsSetUp = 'everything_thing_is_set_up';
+  static const String changeLanguageAndTheme = 'change_language_and_theme';
+  static const String appVersion = 'app_version';
+  static const String error = 'error';
+  static const String exit = 'exit';
+  static const String exitAppTitle = 'exit_app_title';
+  static const String exitAppContent = 'exit_app_content';
+  static const String no = 'no';
+  static const String profile = 'profile';
+  static const String aboutApp = 'about_app';
+  static const String email = 'email';
+  static const String invalidEmail = 'invalid_email';
+  static const String authenticationFailed = 'authentication_failed';
+  static const String login = 'login';
+  static const String requiredField = 'field_required';
+  static const String username = 'Username';
+  static const String password = 'password';
+  static const String forgetPassword = 'forget_password';
+  static const String logout = 'logout';
+  static const String photoBefore = 'photo_before';
+  static const String photoAfter = 'photo_after';
+  static const String inventory = 'inventory';
+  static const String shortfalls = 'shortfalls';
+  static const String delete = 'delete';
+  static const String image = 'image';
+  static const String productCode = 'id';
+  static const String productName = 'product_name';
+  static const String shelf = 'shelf';
+  static const String stock = 'stock';
+  static const String loading = 'loading';
+  static const String generalSettings = 'general_settings';
+  static const String language = 'language';
+  static const String english = 'English';
+  static const String arabic = 'العربية';
+  static const String darkMode = 'dark_mode';
+  static const String privacyPolicy = 'privacy_policy';
+  static const String preferences = 'preferences';
+  static const String help = 'help';
+  static const String endVisit = 'drawer_end_visit';
+  static const String cannotEndVisit = 'can_not_end_visit';
+  static const String unUploadedData = 'un_uploaded_data';
+  static const String goodMorning = 'good_morning';
+  static const String goodAfterNoon = 'good_after_noon';
+  static const String goodEvening = 'good_evening';
+  static const String goodNight = 'good_night';
+  static const String pending = 'pending';
+  static const String inProgress = 'in_progress';
+  static const String failed = 'failed';
+  static const String success = 'success';
+  static const String howWasYourVisit = 'how_was_your_visit';
+  static const String finished = 'finished';
+  static const String successfulVisit = 'successful_visit';
+  static const String failedVisit = 'failed_visit';
+  static const String offDay = 'off_day';
+  static const String relaxAndEnjoy = 'relax_and_enjoy';
+  static const String errorStartingFailedVisit = 'error_starting_failed_visit';
+  static const String errorStartingFinishedVisit =
+      'error_starting_finished_visit';
+
+  static const String errorStartingRequestedVisit =
+      'error_starting_requested_visit';
+  static const String errorStartingRejectedVisit =
+      'error_starting_rejected_visit';
+  static const String warning = 'warning';
+  static const String okay = 'okay';
+  static const String connectToInternet = 'connect_to_internet';
+  static const String makeSureYouAreInsideBranch =
+      'make_sure_you_are_inside_branch';
+  static const String enableLocationService = 'enable_location_service';
+  static const String fakeLocation = 'fake_location';
+  static const String other = 'other';
+  static const String selectVisitReason = 'select_visit_reason';
+  static const String typeVisitReason = 'type_visit_reason';
+
+  static const String inValidUserName = 'Invalid Name';
+  static const String shortPassword = 'short_password';
+  static const String shortVisitReason = 'short_visit_reason';
+  static const String mustContain = 'Must contain [A-z , !@#\$&*~ , 0-9]';
+  static const String inValidPhone = 'Invalid Phone Number';
+  static const String doNotHaveAccount = 'Don\'t have an account ? ';
+  static const String registerNow = 'Register Now';
+  static const String initialPasswordTitle = 'initial_password_title';
+  static const String initialPasswordMessage = 'initial_password_message';
+  static const String changePassword = 'change_password';
+  static const passwordChangedSuccessfully = 'password_changed_successfully';
+  static const oldPassword = 'old_password';
+  static const newPassword = 'new_password';
+  static const confirmNewPassword = 'confirm_new_password';
+  static const passwordMismatch = 'password_mismatch';
+  static const mobileNumber = 'mobile_number';
+  static const emailAddress = 'email_address';
+  static const saturday = 'saturday';
+  static const sunday = 'sunday';
+  static const monday = 'monday';
+  static const tuesday = 'tuesday';
+  static const wednesday = 'wednesday';
+  static const thursday = 'thursday';
+  static const friday = 'friday';
+  static const weekEnd = 'week_end';
+  static const hiringDate = 'hiring_date';
+  static const insuranceNumber = 'insurance_number';
+  static const shirtSize = 'shirt_size';
+  static const qualification = 'qualification';
+  static const maritalStatus = 'marital_status';
+  static const nationalId = 'national_id';
+  static const birthday = 'birthday';
+  static const photosUploadedSuccessfully = 'photo_uploaded_successfully';
+  static const inventoryUploadedSuccessfully =
+      'inventory_uploaded_successfully';
+  static const invalidData = 'invalid_data';
+  static const String registerSubTitle = 'Register To Explore App Features';
+  static const String firstName = 'First Name';
+  static const String lastName = 'Last Name';
+  static const String phoneNumber = 'Phone Number';
+  static const String enterValidPhone = 'Please enter a valid phone number';
+  static const String register = 'Register';
+  static const String alreadyHaveAccount = 'Already have an account ? ';
+  static const String loginNow = 'Login Now';
+
+  static const String enableGPS = 'Please Enable GPS';
+  static const String whoops = 'Whoops';
+  static const String noInternet =
+      'No Internet connection found, Check your connection or try again';
+  static const String usersCollection = 'users';
+  static const String uid = 'uid';
+  static const String contentType = 'Content-Type';
+  static const String applicationJson = 'application/json';
+  static const String multiPart = 'multipart/form-data';
+  static const String errorDuringCommunication = 'error_during_communication';
+  static const String badRequest = 'bad_request';
+  static const String unauthorized = 'unauthorized';
+  static const String requestedDataNotFound = 'requested_data_not_found';
+  static const String conflictOccurred = 'conflict_occurred';
+  static const String internalServerError = 'internal_server_error';
+  static const String noInternetConnection = 'no_internet_connection';
+  static const String somethingWentWrong = 'something_went_wrong';
+  static const String requestCancelled = 'request_cancelled';
+  static const String serviceUnavailable = 'service_unavailable';
+  static const String unableToProcessTheData = 'unable_to_process_the_data';
+  static const String unexpectedErrorOccurred = 'unexpected_error_occurred';
+  static const String methodNotAllowed = 'method_not_allowed';
+  static const String dailyReport = 'daily_report';
+  static const String visitsSummary = 'visits_summary';
+  static const String visitsReport = 'visits_report';
+  static const String notifications = 'notifications';
+  static const String skipRequested = 'skip_requested';
+  static const String skipped = 'skipped';
+  static const String missed = 'missed';
+  static const String requested = 'requesting';
+  static const String rejected = 'rejected';
+  static const String confirmed = 'confirmed';
+  static const String dailyVisitsCount = 'daily_visits_count';
+  static const String visit = 'visit';
+  static const String visits = 'visits';
+  static const String noVisitsFound = 'no_visits_found';
+  static const String downloadVisitPhotos = 'download_visit_photos';
+  static const String noPhotosFound = 'no_photos_found';
+  static const String noInventoryFound = 'no_inventory_found';
+  static const String noProductsFound = 'no_products_found';
+  static const String thisVisitDidNotStartYet = 'this_visit_did_not_start_yet';
+  static const String needsAnUpdate = 'needs_an_update';
+  static const String downloadTheLatestVersion = 'download_the_latest_version';
+  static const String update = 'update';
+  static const String reset = 'reset';
+  static const String before = 'before';
+  static const String after = 'after';
+  static const String noVisitsInThisDay = 'no_visits_in_this_day';
+  static const String mayBeYouWereOff = 'may_be_you_were_off';
+  static const String emergentVisits = 'emergent_visits';
+  static const String noRequestsFound = 'no_requests_found';
+  static const String request = 'request';
+  static const String customer = 'customer';
+  static const String branch = 'branch';
+  static const String noCustomerFound = 'no_customer_found';
+  static const String noBranchFound = 'no_branch_found';
+  static const String addNewEmergentRequest = 'add_new_emergent_request';
+  static const String selectCustomerFirst = 'select_customer_first';
+  static const String selectCustomerAndBranch = 'select_customer_and_branch';
+  static const String yourRequestHasBeenSubmitted =
+      'your_request_has_been_submitted';
+  static const String hasRequestedEmergencyVisit =
+      'has_requested_emergency_visit';
+  static const String emergentVisitRequest = 'emergent_visit_request';
+  static const String accept = 'accept';
+  static const String reject = 'reject';
+  static const String requestHasBeenAccepted = 'request_has_been_accepted';
+  static const String requestHasBeenRejected = 'request_has_been_rejected';
+  static const String visitInfo = 'visit_info';
+  static const String visitId = 'visit_id';
+  static const String visitStatus = 'visit_status';
+  static const String visitReason = 'reason';
+  static const String startTime = 'start_time';
+  static const String endTime = 'end_time';
+  static const String duration = 'duration';
+  static const String endInProgressVisit = 'end_in_progress_visit';
+  static const String supervisor = 'supervisor';
+  static const String all = 'all';
+  static const String shelfShare = 'shelf_share';
+  static const String units = 'units';
+  static const String percentage = 'percentage';
+  static const String selectDisplayUnit = 'select_display_unit';
+  static const String line = 'line';
+  static const String face = 'face';
+  static const String requiredPercentage = 'required_percentage';
+  static const String shelfShareHint = 'shelf_share_hint';
+  static const String pleaseSelectDisplayUnit = 'please_select_display_unit';
+  static const String invalidTotalDisplayUnits = 'invalid_total_display_units';
+  static const String brandsPercentageLessThanContract =
+      'brands_percentage_less_than_contract';
+  static const String brandsUnitsMoreThanTotalDisplayUnits =
+      'brands_units_more_than_total_display_units';
+  static const String others = 'others';
+  static const String shelfShareUploadedSuccessfully =
+      'shelf_share_uploaded_successfully';
+  static const String cancel = 'cancel';
+  static const String proceed = 'proceed';
+}
