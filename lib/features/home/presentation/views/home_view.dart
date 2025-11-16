@@ -8,9 +8,12 @@ import 'package:purity/config/routes/app_navigator.dart';
 import 'package:purity/core/utils/colors_manager.dart';
 import 'package:purity/core/utils/strings_manager.dart';
 import 'package:purity/core/widgets/app_dialogs.dart';
+import 'package:purity/core/widgets/spacing.dart';
 import 'package:purity/features/home/presentation/view_model/home_view_model.dart';
 import 'package:purity/features/home/presentation/view_model/home_view_states.dart';
 import 'package:purity/features/home/presentation/widgets/corner_overlay_painter.dart';
+
+import '../../../../core/utils/assets_manager.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -46,49 +49,89 @@ class _HomeViewState extends State<HomeView> {
         },
         builder: (_, state) {
           return Scaffold(
-            body: SafeArea(
-              child: Visibility(
-                visible: _viewModel.isCameraPermissionGranted ?? false,
-                child: Column(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: MobileScanner(
-                        controller: _viewModel.controller,
-                        overlayBuilder: (context, constraints) {
-                          return LayoutBuilder(
-                            builder: (context, constraints) {
-                              final scanArea = Size(
-                                constraints.maxWidth * 0.9,
-                                constraints.maxHeight * 0.8,
-                              );
-                              final scanOffset = Offset(
-                                (constraints.maxWidth - scanArea.width) / 2,
-                                (constraints.maxHeight - scanArea.height) / 2,
-                              );
+            extendBody: true,
+            body: Visibility(
+              visible: _viewModel.isCameraPermissionGranted ?? false,
+              child: Column(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: MobileScanner(
+                      controller: _viewModel.controller,
+                      overlayBuilder: (context, constraints) {
+                        return LayoutBuilder(
+                          builder: (context, constraints) {
+                            final scanArea = Size(
+                              constraints.maxWidth * 0.9,
+                              constraints.maxHeight * 0.8,
+                            );
+                            final scanOffset = Offset(
+                              (constraints.maxWidth - scanArea.width) / 2,
+                              (constraints.maxHeight - scanArea.height) / 2,
+                            );
 
-                              return CustomPaint(
-                                painter: CornerOverlayPainter(
-                                  scanArea: scanArea,
-                                  scanOffset: scanOffset,
-                                  cornerLength: 20.h,
-                                  cornerWidth: 4.w,
-                                  cornerColor: ColorsManager.lightPrimaryColor,
-                                ),
-                                child: Container(),
-                              );
-                            },
-                          );
-                        },
-                        fit: BoxFit.cover,
-                        useAppLifecycleState: true,
-                        tapToFocus: true,
-                        onDetect: (capture) => _viewModel.onDetect(capture),
-                      ),
+                            return CustomPaint(
+                              painter: CornerOverlayPainter(
+                                scanArea: scanArea,
+                                scanOffset: scanOffset,
+                                cornerLength: 20.h,
+                                cornerWidth: 4.w,
+                                cornerColor: ColorsManager.lightPrimaryColor,
+                              ),
+                              child: Container(),
+                            );
+                          },
+                        );
+                      },
+                      fit: BoxFit.cover,
+                      useAppLifecycleState: true,
+                      tapToFocus: true,
+                      onDetect: (capture) => _viewModel.onDetect(capture),
                     ),
-                    Expanded(flex: 2, child: Container()),
-                  ],
-                ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: ListView(
+                      children: [
+                        Container(
+                          height: 400.h,
+                          decoration: BoxDecoration(
+                            color: ColorsManager.warmYellowColor,
+                            borderRadius: BorderRadius.circular(10.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: ColorsManager.offWhiteColor.withValues(
+                                  alpha: .9,
+                                ),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset: const Offset(
+                                  0,
+                                  3,
+                                ), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          margin: EdgeInsets.symmetric(horizontal: 10.r),
+                          padding: EdgeInsets.all(20.r),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                ImageAssetsManager.appLogo,
+                                width: 200.w,
+                                fit: BoxFit.cover,
+                              ),
+                              Spacing.vSize(20.h),
+                              Text(
+                                'Welcome to our app, we are so happy to have you here!',
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           );
