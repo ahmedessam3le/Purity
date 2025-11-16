@@ -7,13 +7,11 @@ import 'package:lo2tah/config/routes/app_navigator.dart';
 import 'package:lo2tah/core/utils/colors_manager.dart';
 import 'package:lo2tah/core/utils/strings_manager.dart';
 import 'package:lo2tah/core/widgets/app_dialogs.dart';
-import 'package:lo2tah/core/widgets/spacing.dart';
 import 'package:lo2tah/features/home/presentation/view_model/home_view_model.dart';
 import 'package:lo2tah/features/home/presentation/view_model/home_view_states.dart';
 import 'package:lo2tah/features/home/presentation/widgets/corner_overlay_painter.dart';
+import 'package:lo2tah/features/home/presentation/widgets/list_initial_item.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-
-import '../../../../core/utils/assets_manager.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -93,42 +91,12 @@ class _HomeViewState extends State<HomeView> {
                 Expanded(
                   flex: 2,
                   child: ListView(
+                    controller: _viewModel.scrollController,
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
                     children: [
-                      Container(
-                        height: 400.h,
-                        decoration: BoxDecoration(
-                          color: ColorsManager.warmYellowColor,
-                          borderRadius: BorderRadius.circular(10.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: ColorsManager.offWhiteColor.withValues(
-                                alpha: .9,
-                              ),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: const Offset(
-                                0,
-                                3,
-                              ), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        margin: EdgeInsets.symmetric(horizontal: 10.r),
-                        padding: EdgeInsets.all(20.r),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              ImageAssetsManager.appLogo,
-                              width: 200.w,
-                              fit: BoxFit.cover,
-                            ),
-                            Spacing.vSize(20.h),
-                            Text(
-                              'Welcome to our app, we are so happy to have you here!',
-                            ),
-                          ],
-                        ),
-                      ),
+                      ListInitialItem(),
+                      ..._viewModel.barcodes.map((e) => ListInitialItem()),
                     ],
                   ),
                 ),

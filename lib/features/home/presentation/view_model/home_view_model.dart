@@ -3,15 +3,16 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:lo2tah/config/log/logger.dart';
 import 'package:lo2tah/features/home/presentation/view_model/home_view_states.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class HomeViewModel extends Cubit<HomeViewStates> {
   HomeViewModel() : super(HomeInitialState());
 
   final GlobalKey barCodeKey = GlobalKey(debugLabel: 'Barcode');
+  ScrollController? scrollController;
   MobileScannerController? controller;
   bool? isCameraPermissionGranted;
   List<Barcode> barcodes = [];
@@ -21,6 +22,7 @@ class HomeViewModel extends Cubit<HomeViewStates> {
   AudioPlayer? _audioPlayer;
 
   Future<void> init() async {
+    scrollController = ScrollController();
     controller = MobileScannerController(
       autoStart: true,
       detectionSpeed: DetectionSpeed.normal,
@@ -68,8 +70,9 @@ class HomeViewModel extends Cubit<HomeViewStates> {
 
   @override
   Future<void> close() async {
+    scrollController?.dispose();
+    scrollController = null;
     await _audioPlayer?.dispose();
-    audioPlayer?.dispose();
     return super.close();
   }
 }

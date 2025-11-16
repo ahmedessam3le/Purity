@@ -248,5 +248,10 @@
   "others": "Others",
   "shelf_share_uploaded_successfully": "Shelf Share Uploaded",
   "cancel": "Cancel",
-  "proceed": "Proceed"
+  "proceed": "Proceed",
+  "scan": "Scan",
+  "a_barcode_or": "a barcode or",
+  "search": "Search",
+  "search_btn_label": "Search",
+  "for_a_product": "for a product"
 }

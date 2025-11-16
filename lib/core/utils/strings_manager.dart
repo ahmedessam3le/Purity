@@ -232,4 +232,9 @@ class AppStrings {
       'shelf_share_uploaded_successfully';
   static const String cancel = 'cancel';
   static const String proceed = 'proceed';
+  static const String scan = 'scan';
+  static const String aBarcodeOr = 'a_barcode_or';
+  static const String search = 'search';
+  static const String searchBtnLabel = 'search_btn_label';
+  static const String forAProduct = 'for_a_product';
 }

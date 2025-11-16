@@ -248,5 +248,10 @@
   "others": "أخرى",
   "shelf_share_uploaded_successfully": "تم رفع حصة الرف بنجاح",
   "cancel": "إلغاء",
-  "proceed": "متابعة"
+  "proceed": "متابعة",
+  "scan": "امسح",
+  "a_barcode_or": "باركود او",
+  "search": "ابحث",
+  "search_btn_label": "بحث",
+  "for_a_product": "عن منتج"
 }
